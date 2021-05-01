@@ -1,0 +1,31 @@
+version: '3.9'
+# docker compose version
+services:
+  backend:
+    # nest admin
+    build: .
+    # use <- Dockerfile
+    ports:
+      - 8000:3000
+      # <port of our localhost>:<port of the container local host>
+    volumes:
+      - .:/app
+      # . (all of file here) /app (the working directory)
+    depends_on:
+      - db
+      # build "db" first and then build "backend" container
+  db:
+    # MySQL
+    image: mysql:5.7.22
+    # We'll download MySQL image from docker hub
+    restart: always
+    environment:
+      MYSQL_DATABASE: admin
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+    volumes:
+      # volumns are the files that this container will generate
+      - .dbdata:/var/lib/mysql
+      # .dbdata folder that  we will generate
+      # /var/lib/mysql this is inside the docker container
