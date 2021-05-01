@@ -23,9 +23,11 @@ services:
       MYSQL_DATABASE: admin
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD: root
     volumes:
       # volumns are the files that this container will generate
       - .dbdata:/var/lib/mysql
       # .dbdata folder that  we will generate
       # /var/lib/mysql this is inside the docker container
+    ports:
+      - 33066:3306
