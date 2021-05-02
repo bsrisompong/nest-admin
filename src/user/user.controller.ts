@@ -1,10 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
+import { UserService } from './user.service';
 
 @Controller('users')
 export class UserController {
-  @Get() // TypeScript decorator (Method decorator)
+  constructor(private userServices: UserService) {}
+
+  @Get()
   all() {
-    // all function
-    return ['users'];
+    return this.userServices.all();
   }
 }

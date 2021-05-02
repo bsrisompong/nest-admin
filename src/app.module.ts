@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+// import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
     UserModule,
+    // ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'db',
@@ -16,7 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'admin',
       // entities: [],
       autoLoadEntities: true,
-      // ^ don't use the same produuction environment beccause it will always migrate databases.
+      // ^ don't use the same produution environment because it will always migrate databases.
       synchronize: true,
     }),
   ],

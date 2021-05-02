@@ -1,0 +1,147 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "@localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "@localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "@localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "@localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "123456"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "localhost2",
+      "password": "123456",
+      "database": "admin",
+      "username": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "database": "admin",
+      "username": "root",
+      "password": "123456",
+      "name": "localhost"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "test",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "xprotocol"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "askForPassword": true,
+      "driver": "MySQL",
+      "name": "db",
+      "database": "admin",
+      "username": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "localhost",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33066,
+      "driver": "MySQL",
+      "name": "admin",
+      "database": "admin",
+      "username": "root",
+      "password": "root"
+    }
+  ]
+}
