@@ -9,12 +9,14 @@ import {
   Get,
   UseInterceptors,
   ClassSerializerInterceptor,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import * as bcrypt from 'bcryptjs';
 import { RegisterDto } from './models/register.dto';
 import { JwtService } from '@nestjs/jwt';
 import { Request, Response } from 'express';
+import { AuthGuard } from './auth.guard';
 // import { AuthInterceptor } from './auth.interceptor';
 // bcrypt.hash('asdasd213', 12).then((result) => console.log(result));
 // // $2a$12$wVao9W0fkkgtSs8s/VEbEOMFji76t4p8t8t/3ozx9ghADgtVbsM82
@@ -40,7 +42,7 @@ export class AuthController {
   async login(
     @Body('email') email: string,
     @Body('password') password: string,
-    @Res() response: Response,
+    @Res({ passthrough: true }) response: Response,
   ) {
     const user = await this.userService.findOne({ email });
 
@@ -60,6 +62,7 @@ export class AuthController {
     return user;
   }
 
+  @UseGuards(AuthGuard)
   @Get('user')
   async user(@Req() request: Request) {
     const cookie = request.cookies['jwt'];
@@ -67,5 +70,13 @@ export class AuthController {
     const data = await this.jwtService.verifyAsync(cookie);
 
     return this.userService.findOne({ id: data.id });
+  }
+
+  @UseGuards(AuthGuard)
+  @Post('logout')
+  async logout(@Res({ passthrough: true }) response: Response) {
+    response.clearCookie('jwt');
+
+    return { massage: 'success' };
   }
 }
