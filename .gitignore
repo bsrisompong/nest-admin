@@ -1,5 +1,5 @@
-.env
-.env.developement
+/.env
+/.env.developement
 
 # compiled output
 /dist
