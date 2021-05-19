@@ -9,6 +9,7 @@ import { CommonModule } from './common/common.module';
 import { RoleModule } from './modules/role/role.module';
 import { PermissonModule } from './modules/permisson/permission.module';
 import { ProductModule } from './modules/product/product.module';
+import { OrderModule } from './modules/order/order.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ProductModule } from './modules/product/product.module';
     RoleModule,
     PermissonModule,
     ProductModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],
