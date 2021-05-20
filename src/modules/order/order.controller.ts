@@ -15,6 +15,7 @@ import { OrderItem } from './order-item.entity';
 import { Order } from './order.entity';
 import { OrderService } from './order.service';
 import { Response } from 'express';
+import { HasPermission } from '../permisson/has-permission.decorator';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @UseGuards(AuthGuard)
@@ -23,12 +24,14 @@ export class OrderController {
   constructor(private orderService: OrderService) {}
 
   @Get('')
+  @HasPermission('orders')
   async all(@Query('page') page = 1, take = 10) {
     // return this.orderService.all(['order_items']);
     return this.orderService.paginate(page, take, ['order_items']);
   }
 
   @Post('export')
+  @HasPermission('orders')
   async export(@Res() res: Response) {
     // first row
     const parser = new Parser({
@@ -68,6 +71,7 @@ export class OrderController {
   }
 
   @Get('chart')
+  @HasPermission('orders')
   async chart() {
     return this.orderService.chart();
   }
